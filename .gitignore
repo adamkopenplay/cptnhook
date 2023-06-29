@@ -1,0 +1,7 @@
+# Dependencies
+/vendor/
+
+# PHP tools
+.php_cs.cache
+.phpunit.result.cache
+.phpunit.cache

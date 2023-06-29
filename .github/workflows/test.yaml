@@ -16,10 +16,13 @@ jobs:
     steps:
       - name: Get repo
         uses: actions/checkout@v3
-      - name: Run
+      - name: Composer install
+        # vendor doesn't exist and we get perms issues when trying to create it
         run: |
+          mkdir vendor
           make composer-install
-          make test
+      - name: Run
+        run: make test
 
   run_laravel_10_tests:
     name: "Run laravel 10 integration tests"
@@ -27,9 +30,12 @@ jobs:
     steps:
       - name: Get repo
         uses: actions/checkout@v3
-      - name: Run
+      - name: Composer install
+        # vendor doesn't exist and we get perms issues when trying to create it
         run: |
+          mkdir vendor
           make composer-install-laravel10
-          make test-laravel10
+      - name: Run
+        run: make test-laravel10
 
 

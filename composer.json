@@ -1,0 +1,35 @@
+{
+    "name": "adamkopenplay/cptnhook",
+    "description": "Provides a way to run a generic one off hooks in a php app.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Adam Kirk",
+            "email": "adamk@openplay.co.uk"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "symfony/console": "^6.0",
+        "symfony/finder": "^6.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "laravel/framework": "^10.0",
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": { "CptnHook\\": "src" }
+    },
+    "autoload-dev": {
+        "psr-4": { "CptnHook\\Tests\\": "tests" }
+    },
+    "config": {
+        "platform": {
+            "php": "8.1.0"
+        },
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    }
+}
