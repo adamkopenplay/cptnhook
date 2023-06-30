@@ -1,0 +1,35 @@
+name: Test
+
+# Manually triggered only until our runners are more reliable
+on:
+  pull_request:
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group: '${{ github.workflow }}.${{ github.event.number }}'
+  cancel-in-progress: true
+
+jobs:
+  run_lib_tests:
+    name: "Run tests for base library"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo
+        uses: actions/checkout@v3
+      - name: Run
+        run: |
+          make composer-install
+          make test
+
+  run_laravel_10_tests:
+    name: "Run laravel 10 integration tests"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo
+        uses: actions/checkout@v3
+      - name: Run
+        run: |
+          make composer-install-laravel10
+          make test-laravel10
+
+
