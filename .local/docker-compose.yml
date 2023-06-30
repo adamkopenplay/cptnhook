@@ -1,0 +1,19 @@
+x-svc:
+  &svc
+    profiles:
+      - manual
+    user: root
+    build:
+      context: ../
+      dockerfile: .local/Dockerfile
+    volumes:
+      - "../:/src"
+
+services:
+  php-cli:
+    <<: *svc
+    working_dir: /src/
+
+  laravel10:
+    <<: *svc
+    working_dir: /src/test-laravel10

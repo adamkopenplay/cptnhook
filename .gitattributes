@@ -1,0 +1,14 @@
+# Development files
+Makefile export-ignore
+phpunit.xml export-ignore
+.php_cs export-ignore
+.local export-ignore
+
+# Git files
+.git/ export-ignore
+.gitignore export-ignore
+
+# Test files
+tests/ export-ignore
+# This is a laravel installation we can use to test the integration
+laravel/ export-ignore
